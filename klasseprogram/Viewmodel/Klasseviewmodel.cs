@@ -28,7 +28,8 @@ namespace klasseprogram.Viewmodel
             {
             Listen = new Model.Klasseliste();
             SelectedElev = new Model.klasseinfo();
-            addnyelevcommand = new RelayCommand(addnyelev);
+            AddElevCommand = new AddElevCommand(addnyelev);
+            //addnyelevcommand = new RelayCommand(addnyelev);
             }
 
 
@@ -44,6 +45,9 @@ namespace klasseprogram.Viewmodel
 
 
         }
+
+        public AddElevCommand AddElevCommand { get; set; }
+
         public Model.klasseinfo Nyelev { get; set; }
 
         public void addnyelev()
@@ -51,6 +55,6 @@ namespace klasseprogram.Viewmodel
             Listen.Add(Nyelev);
         }
 
-        public RelayCommand addnyelevcommand { get; set; }
+       // public RelayCommand addnyelevcommand { get; set; }
     }
 }
