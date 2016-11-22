@@ -26,5 +26,13 @@ namespace klasseprogram
         {
             this.InitializeComponent();
         }
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

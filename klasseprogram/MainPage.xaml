@@ -1,13 +1,30 @@
 ﻿<Page
-    x:Class="klasseprogram.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:klasseprogram"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Viewmodel="using:klasseprogram.Viewmodel"
+    x:Class="klasseprogram.MainPage"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <Viewmodel:Klasseviewmodel/>
+    </Page.DataContext>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="197" Margin="30,336,0,0" VerticalAlignment="Top" Width="935" ItemsSource="{Binding Listen}" SelectedItem="{Binding SelectedElev, Mode=TwoWay}" FontSize="18"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="181,283,0,0" TextWrapping="Wrap" Text="{Binding SelectedElev}" VerticalAlignment="Top" Width="665" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ny elev:" VerticalAlignment="Top" Height="38" Width="321" FontSize="24" FontWeight="Bold" Margin="10,0,0,0"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.ForNavn, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Height="50" PlaceholderText="Fornavn" FontSize="20"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="50" Margin="145,43.021,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.EfterNavn, Mode=TwoWay}" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" FontSize="20" PlaceholderText="Efternavn">
+            <TextBox.RenderTransform>
+                <CompositeTransform Rotation="-0.066"/>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="50" Margin="280,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.MobilNr, Mode=TwoWay}" VerticalAlignment="Top" Width="130" PlaceholderText="Mobil nr" FontSize="20"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="50" Margin="415,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.Email, Mode=TwoWay}" VerticalAlignment="Top" Width="130" PlaceholderText="Email" FontSize="20"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="50" Margin="550,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.GitNavn, Mode=TwoWay}" VerticalAlignment="Top" Width="130" FontSize="20" PlaceholderText="Github navn"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="49" Margin="31,283,0,0" TextWrapping="Wrap" Text="Elevliste" VerticalAlignment="Top" Width="441" FontSize="30" FontWeight="Bold"/>
     </Grid>
 </Page>

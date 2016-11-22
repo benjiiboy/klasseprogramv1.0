@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace klasseprogram.Model
 {
-    class klasseinfo
+    public class klasseinfo
     {
         // Her laver jeg de properties som bruges til at beskrive den klasse vi skal lave. f.eks info om 1R.
         public string ForNavn { get; set; }
@@ -18,5 +18,10 @@ namespace klasseprogram.Model
         public string Email { get; set; }
 
         public string GitNavn { get; set; }
+
+        public override string ToString()
+        {
+            return "Fornavn: " + ForNavn + " Efternavn: " + EfterNavn + " Mobil Nr: " + MobilNr + " Email: " + Email + " Githubnavn: " + GitNavn;
+        }
     }
 }
