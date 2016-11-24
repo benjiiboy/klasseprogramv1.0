@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
+using Newtonsoft.Json;
 
 namespace klasseprogram.Model
 {
@@ -13,7 +15,7 @@ namespace klasseprogram.Model
 
         public string EfterNavn { get; set; }
 
-        public int MobilNr { get; set; }
+        public string MobilNr { get; set; }
 
         public string Email { get; set; }
 
@@ -23,5 +25,7 @@ namespace klasseprogram.Model
         {
             return "Fornavn: " + ForNavn + " Efternavn: " + EfterNavn + " Mobil Nr: " + MobilNr + " Email: " + Email + " Githubnavn: " + GitNavn;
         }
+
+        
     }
 }
