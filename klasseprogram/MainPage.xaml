@@ -12,8 +12,11 @@
         <Viewmodel:Klasseviewmodel/>
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="197" Margin="30,336,0,0" VerticalAlignment="Top" Width="905" ItemsSource="{Binding Listen}" SelectedItem="{Binding SelectedElev, Mode=TwoWay}" FontSize="18"/>
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource=" billeder/Skole.jpg"/>
+        </Grid.Background>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="197" Margin="30,336,0,0" VerticalAlignment="Top" Width="905" ItemsSource="{Binding Listen}" SelectedItem="{Binding SelectedElev, Mode=TwoWay}" FontSize="18" BorderBrush="Black" BorderThickness="2"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="54" Margin="181,283,0,0" TextWrapping="Wrap" Text="{Binding SelectedElev}" VerticalAlignment="Top" Width="665" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ny elev:" VerticalAlignment="Top" Height="38" Width="321" FontSize="24" FontWeight="Bold" Margin="10,0,0,0"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.ForNavn, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Height="50" PlaceholderText="Fornavn" FontSize="20"/>
@@ -26,9 +29,37 @@
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="50" Margin="415,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.Email, Mode=TwoWay}" VerticalAlignment="Top" Width="130" PlaceholderText="Email" FontSize="20"/>
         <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="50" Margin="550,43,0,0" TextWrapping="Wrap" Text="{Binding Nyelev.GitNavn, Mode=TwoWay}" VerticalAlignment="Top" Width="130" FontSize="20" PlaceholderText="Github navn"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="49" Margin="31,283,0,0" TextWrapping="Wrap" Text="Elevliste" VerticalAlignment="Top" Width="441" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="Tilføj_Elev" Content="Tilføj Elev!" HorizontalAlignment="Left" Height="50" Margin="690,43,0,0" VerticalAlignment="Top" Width="131" Command="{Binding AddElevCommand}" FontSize="22"/>
-        <Button x:Name="button" Content="Slet Elev" HorizontalAlignment="Left" Height="50" Margin="967,283,0,0" VerticalAlignment="Top" Width="130" FontSize="20" Command="{Binding SletElevCommand}"/>
-        <Button x:Name="button1" Content="Gem" HorizontalAlignment="Left" Height="50" Margin="967,351,0,0" VerticalAlignment="Top" Width="130" FontSize="22" Command="{Binding GemElevCommand}"/>
-        <Button x:Name="button2" Content="Hent" HorizontalAlignment="Left" Height="55" Margin="967,427,0,0" VerticalAlignment="Top" Width="130" Command="{Binding HentDataCommand}"/>
+        <Button x:Name="Tilføj_Elev" Content="Tilføj Elev!" HorizontalAlignment="Left" Height="50" Margin="690,43,0,0" VerticalAlignment="Top" Width="131" Command="{Binding AddElevCommand}" FontSize="22">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/blyant.jpg" Opacity="0.6">
+                    <ImageBrush.RelativeTransform>
+                        <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-45"/>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button" Content="Slet Elev" HorizontalAlignment="Left" Height="50" Margin="967,283,0,0" VerticalAlignment="Top" Width="130" FontSize="20" Command="{Binding SletElevCommand}">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/viskelædder.jpg" Opacity="0.6"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button1" Content="Gem" HorizontalAlignment="Left" Height="50" Margin="967,351,0,0" VerticalAlignment="Top" Width="130" FontSize="22" Command="{Binding GemElevCommand}">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/Disk.jpg" Opacity="0.6"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button2" Content="Hent" HorizontalAlignment="Left" Height="50" Margin="967,427,0,0" VerticalAlignment="Top" Width="130" Command="{Binding HentDataCommand}" FontSize="22">
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/hent.png" Opacity="0.6"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button3" Content="Rydliste" HorizontalAlignment="Left" Height="50" Margin="967,497,0,0" VerticalAlignment="Top" Width="130" FontSize="20">
+            <Button.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/papirkurv.jpg" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

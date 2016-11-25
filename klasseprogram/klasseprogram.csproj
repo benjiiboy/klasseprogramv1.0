@@ -105,6 +105,7 @@
     <Compile Include="Viewmodel\GemElevCommand.cs" />
     <Compile Include="Viewmodel\HentDataCommand.cs" />
     <Compile Include="Viewmodel\Klasseviewmodel.cs" />
+    <Compile Include="Viewmodel\RydlisteDataCommand.cs" />
     <Compile Include="Viewmodel\SletElevCommand.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +115,12 @@
     <None Include="klasseprogram_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\blyant.jpg" />
+    <Content Include="Assets\Disk.jpg" />
+    <Content Include="Assets\hent.png" />
+    <Content Include="Assets\papirkurv.jpg" />
+    <Content Include="billeder\Skole.jpg" />
+    <Content Include="Assets\viskelædder.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

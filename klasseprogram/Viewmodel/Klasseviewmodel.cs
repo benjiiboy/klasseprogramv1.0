@@ -33,12 +33,13 @@ namespace klasseprogram.Viewmodel
             {
             // her laves alle de nye instanser
             Listen = new Model.Klasseliste();
-            SelectedElev = new Model.klasseinfo();
             AddElevCommand = new AddElevCommand(addnyelev);
             SletElevCommand = new SletElevCommand(SletElev);
             Nyelev = new Model.klasseinfo();
             GemElevCommand = new GemElevCommand(GemDataTilDiskAsync);
             HentDataCommand = new HentDataCommand(HentDataFraDiskAsync);
+            RydlisteDataCommand = new RydlisteDataCommand(RydlisteData);
+
 
             localfolder = ApplicationData.Current.LocalFolder;
             //addnyelevcommand = new RelayCommand(addnyelev);
@@ -91,6 +92,8 @@ namespace klasseprogram.Viewmodel
 
         public HentDataCommand HentDataCommand { get; set; }
 
+        public RydlisteDataCommand RydlisteDataCommand { get; set; }
+
         StorageFolder localfolder = null;
 
         #endregion
@@ -119,10 +122,11 @@ namespace klasseprogram.Viewmodel
         // public RelayCommand addnyelevcommand { get; set; }
         #endregion
 
-        #region Hent data fra diseken 
-        public async void HentDataFraDiskAsync() // her har jeg lavet en metode til at finde og loade data fra disken
-                                                 // Først clear den listen så derefter henter den det data den kan finde under fil nanet
+        #region Hent data fra disken 
+        public async void HentDataFraDiskAsync() 
         {
+            // her har jeg lavet en metode til at finde og loade data fra disken
+            // Først clear den listen så derefter henter den det data den kan finde under fil navnet
             this.Listen.Clear();
 
             StorageFile file = await localfolder.GetFileAsync(filnavn);
@@ -131,6 +135,12 @@ namespace klasseprogram.Viewmodel
             Listen.IndsætJson(jsonText);
 
         }
+
+
         #endregion
+        public void RydlisteData()
+        {
+            this.Listen.Clear();
+        }
     }
 }
